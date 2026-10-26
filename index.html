@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hair by Neelam Sagar — Bridal &amp; Editorial Hair Artistry · Delhi, Worldwide</title>
+<meta name="description" content="Hair by Neelam Sagar — freelance bridal and editorial hairstylist based in Delhi, travelling worldwide for weddings, shoots and events. Request a booking.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ================================================================
+   HAIR BY NEELAM SAGAR — blush editorial layer (vanilla CSS)
+================================================================ */
+:root{
+ --blush:#E6DDEA; --blush-2:#F0E9F2; --card:#F6F0F7; --ivory:#FBF8FC;
+--ink:#3A2F40; --ink-2:#2B2230; --taupe:#7D6B85;
+--gold:#B08D6A; --gold-2:#CDA98A; --gold-ink:#8A6544;
+--ink-soft: rgba(58,47,64,.62);
+--ink-faint:rgba(58,47,64,.42);
+--cream-75:  rgba(251,248,252,.78);
+--cream-45:  rgba(251,248,252,.48);
+--line-g:    rgba(176,141,106,.38);
+--line-t:    rgba(125,107,133,.28);
+--line-d:    rgba(251,248,252,.18);
+}
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; scroll-padding-top:100px; -webkit-text-size-adjust:100%; }
+body{
+  font-family:var(--sans); font-weight:300; font-size:16px;
+  color:var(--ink); background:var(--blush); line-height:1.85;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ list-style:none; }
+button{ font:inherit; background:none; border:0; cursor:pointer; color:inherit; }
+::selection{ background:var(--gold); color:var(--ink-2); }
+::-webkit-scrollbar{ width:10px; }
+::-webkit-scrollbar-track{ background:var(--blush-2); }
+::-webkit-scrollbar-thumb{ background:var(--gold); border:2px solid var(--blush-2); border-radius:99px; }
+:focus-visible{ outline:2px solid var(--gold-ink); outline-offset:3px; }
+body.no-scroll{ overflow:hidden; }
+
+h1,h2,h3,h4{ font-family:var(--serif); font-weight:500; color:var(--ink-2); line-height:1.14; }
+em{ font-style:italic; font-weight:400; }
+
+.container{ width:min(1240px, 100% - 3rem); margin-inline:auto; }
+@media (min-width:1440px){ .container{ width:min(1300px, 93%); } }
+.section{ padding:clamp(4.5rem, 9vw, 7.5rem) 0; }
+
+/* ---------- labels & headings ---------- */
+.label{
+  display:flex; align-items:center; gap:1rem;
+  font-size:.64rem; font-weight:500; letter-spacing:.44em; text-transform:uppercase;
+  color:var(--gold-ink); margin-bottom:1.3rem;
+}
+.label::before{ content:""; width:42px; height:1px; background:var(--gold); }
+.label.center{ justify-content:center; }
+.label.center::after{ content:""; width:42px; height:1px; background:var(--gold); }
+.label.on-dark{ color:var(--gold-2); }
+.h-display{ font-size:clamp(2.4rem, 5vw, 3.8rem); }
+.h-display em{ color:var(--taupe); }
+.on-dark .h-display{ color:var(--ivory); }
+.on-dark .h-display em{ color:var(--gold-2); }
+.lead{ color:var(--ink-soft); max-width:56ch; }
+
+/* ---------- monogram ---------- */
+.mono{
+  width:46px; height:46px; border-radius:50%; flex:none;
+  border:1px solid var(--gold); color:var(--gold-ink);
+  display:inline-flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-weight:600; font-size:1.1rem; letter-spacing:.04em;
+  transition:all .3s ease;
+}
+
+/* ---------- divider motif ---------- */
+.divider{ display:flex; align-items:center; gap:1rem; margin:2rem 0; }
+.divider::before, .divider::after{ content:""; flex:1; height:1px; background:var(--line-g); }
+.divider .d-mono{
+  width:38px; height:38px; border-radius:50%; border:1px solid var(--gold);
+  color:var(--gold-ink); font-family:var(--serif); font-weight:600; font-size:.92rem;
+  display:flex; align-items:center; justify-content:center; flex:none;
+}
+
+/* ---------- buttons (250ms scale + colour) ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.7rem;
+  min-height:48px; padding:.95rem 2.3rem; border-radius:999px; border:1px solid transparent;
+  font-weight:400; font-size:.7rem; letter-spacing:.26em; text-transform:uppercase;
+  transition:transform .25s ease, background-color .25s ease, color .25s ease,
+             border-color .25s ease, box-shadow .25s ease;
+  will-change:transform;
+}
+.btn svg{ width:14px; height:14px; transition:transform .25s ease; }
+.btn:hover svg{ transform:translateX(4px); }
+.btn:active{ transform:scale(.96); }
+.btn-gold{ background:var(--gold); color:var(--ink-2); }
+.btn-gold:hover{ transform:scale(1.05); background:var(--gold-2); box-shadow:0 0 0 1px rgba(203,174,120,.55), 0 14px 40px rgba(184,152,95,.5); }
+.btn-line{ border-color:rgba(253,248,243,.55); color:var(--ivory); }
+.btn-line:hover{ transform:scale(1.05); background:var(--ivory); color:var(--ink-2); box-shadow:0 14px 34px rgba(0,0,0,.2); }
+.btn-outline-dark{ border-color:var(--gold-ink); color:var(--gold-ink); }
+.btn-outline-dark:hover{ transform:scale(1.05); background:var(--gold); border-color:var(--gold); color:var(--ink-2); box-shadow:0 12px 30px rgba(184,152,95,.4); }
+
+.link-arrow{
+  display:inline-flex; align-items:center; gap:.55rem;
+  font-size:.64rem; font-weight:500; letter-spacing:.26em; text-transform:uppercase; color:var(--gold-ink);
+  transition:color .25s ease; min-height:44px;
+}
+.link-arrow svg{ width:14px; height:14px; transition:transform .25s ease; }
+.link-arrow:hover{ color:var(--ink-2); }
+.link-arrow:hover svg{ transform:translateX(5px); }
+
+/* ================= NAV ================= */
+.site-nav{
+  --nc:var(--ivory);
+  position:fixed; inset:0 0 auto; z-index:900;
+  padding:1.35rem 0;
+  transition:padding .3s ease, background-color .3s ease, box-shadow .3s ease, border-color .3s ease;
+  border-bottom:1px solid transparent;
+}
+.site-nav.scrolled{
+  --nc:var(--ink-2);
+  padding:.7rem 0;
+  background:rgba(242,222,217,.9);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-g);
+  box-shadow:0 12px 40px rgba(46,39,36,.08);
+}
+.nav-wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.brand{ display:flex; align-items:center; gap:.9rem; color:var(--nc); min-height:44px; transition:color .3s ease; }
+.brand .mono{ border-color:var(--gold-2); color:var(--gold-2); transition:all .3s ease; }
+.site-nav.scrolled .brand .mono{ border-color:var(--gold-ink); color:var(--gold-ink); }
+.brand-t{ line-height:1.3; }
+.brand-t .n{ font-family:var(--serif); font-weight:600; font-size:1.14rem; letter-spacing:.12em; display:block; }
+.brand-t .s{ font-size:.5rem; font-weight:400; letter-spacing:.42em; text-transform:uppercase; color:var(--taupe); display:block; }
+.site-nav:not(.scrolled) .brand-t .s{ color:var(--cream-45); }
+.nav-links{ display:none; align-items:center; gap:1.9rem; }
+.nav-links a{
+  position:relative; color:var(--nc);
+  font-size:.62rem; font-weight:400; letter-spacing:.3em; text-transform:uppercase;
+  padding:.6rem 0; min-height:44px; display:inline-flex; align-items:center;
+  transition:color .25s ease;
+}
+.nav-links a::after{
+  content:""; position:absolute; left:0; right:0; bottom:.3rem; height:1px; background:var(--gold);
+  transform:scaleX(0); transform-origin:right; transition:transform .35s var(--ease);
+}
+.nav-links a:hover, .nav-links a.active{ color:var(--gold); }
+.site-nav.scrolled .nav-links a:hover, .site-nav.scrolled .nav-links a.active{ color:var(--gold-ink); }
+.nav-links a:hover::after, .nav-links a.active::after{ transform:scaleX(1); transform-origin:left; }
+.burger{ position:relative; z-index:960; width:44px; height:44px; display:flex; align-items:center; justify-content:center; }
+.burger-box{ width:26px; height:16px; position:relative; }
+.burger-box span{
+  position:absolute; left:0; width:100%; height:1.6px; background:var(--nc);
+  transition:transform .3s ease, top .3s ease, opacity .2s ease, background-color .3s ease;
+}
+.burger-box span:nth-child(1){ top:0; } .burger-box span:nth-child(2){ top:7px; } .burger-box span:nth-child(3){ top:14px; }
+body.menu-open .burger-box span:nth-child(1){ top:7px; transform:rotate(45deg); }
+body.menu-open .burger-box span:nth-child(2){ opacity:0; }
+body.menu-open .burger-box span:nth-child(3){ top:7px; transform:rotate(-45deg); }
+body.menu-open .site-nav{ --nc:var(--ivory); background:transparent; border-color:transparent; box-shadow:none; }
+@media (min-width:1024px){ .nav-links{ display:flex; } .burger{ display:none; } }
+
+/* mobile menu */
+.m-menu{
+  position:fixed; inset:0; z-index:950; background:var(--ink-2);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2.4rem;
+  opacity:0; visibility:hidden; transition:opacity .38s ease, visibility .38s ease;
+}
+.m-menu.open{ opacity:1; visibility:visible; }
+.m-menu ul{ display:flex; flex-direction:column; align-items:center; gap:.3rem; text-align:center; }
+.m-menu a.m-link{
+  font-family:var(--serif); font-size:clamp(1.9rem,7.5vw,2.5rem); color:var(--ivory);
+  padding:.45rem 1rem; min-height:52px; display:inline-flex; align-items:center;
+  opacity:0; transform:translateY(24px);
+  transition:color .3s ease, transform .5s var(--ease), opacity .5s ease;
+}
+.m-menu.open a.m-link{ opacity:1; transform:none; }
+.m-menu li:nth-child(1) a{ transition-delay:.06s } .m-menu li:nth-child(2) a{ transition-delay:.12s }
+.m-menu li:nth-child(3) a{ transition-delay:.18s } .m-menu li:nth-child(4) a{ transition-delay:.24s }
+.m-menu li:nth-child(5) a{ transition-delay:.3s } .m-menu li:nth-child(6) a{ transition-delay:.36s }
+.m-menu a.m-link:hover{ color:var(--gold-2); }
+.m-menu .m-extra{ display:flex; align-items:center; gap:1rem; opacity:0; transition:opacity .5s ease .4s; }
+.m-menu.open .m-extra{ opacity:1; }
+.m-menu .m-extra a{
+  width:46px; height:46px; border-radius:50%; border:1px solid var(--line-d);
+  display:flex; align-items:center; justify-content:center; color:var(--ivory); transition:all .25s ease;
+}
+.m-menu .m-extra a:hover{ background:var(--gold); color:var(--ink-2); border-color:var(--gold); transform:scale(1.1); }
+.m-menu .m-extra svg{ width:16px; height:16px; }
+
+/* ================= HERO (centered) ================= */
+.hero{
+  position:relative; min-height:100svh;
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  color:var(--ivory); background:var(--ink-2); overflow:hidden;
+  padding:9rem 0 7rem;
+}
+.hero-bg{
+  position:absolute; inset:0;
+  background:url('https://i.pinimg.com/736x/ac/98/52/ac985273c50dbb5ea19683f204592726.jpg') center 28%/cover no-repeat;
+  transform:scale(1.08); transition:transform 6s var(--ease);
+}
+body.loaded .hero-bg{ transform:scale(1); }
+.hero-veil{
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom, rgba(46,39,36,.5) 0%, rgba(46,39,36,.62) 55%, rgba(46,39,36,.78) 100%);
+}
+.hero-content{ position:relative; z-index:2; max-width:50rem; padding-inline:1rem; }
+.hero-eyebrow{
+  display:inline-flex; align-items:center; gap:1rem;
+  font-size:.62rem; font-weight:400; letter-spacing:.5em; text-transform:uppercase; color:var(--gold-2);
+  margin-bottom:1.8rem;
+}
+.hero-eyebrow::before, .hero-eyebrow::after{ content:""; width:40px; height:1px; background:rgba(203,174,120,.6); }
+.hero h1{ color:var(--ivory); font-size:clamp(3rem, 10vw, 6.8rem); line-height:1.02; margin-bottom:1.4rem; }
+.hero h1 em{ color:var(--gold-2); }
+.hero-tag{
+  font-family:var(--serif); font-weight:400; font-size:clamp(1.25rem, 2.8vw, 1.7rem);
+  color:var(--cream-75); margin-bottom:1rem;
+}
+.hero-sub{
+  font-size:.64rem; font-weight:400; letter-spacing:.44em; text-transform:uppercase; color:var(--cream-45);
+  margin-bottom:2.8rem;
+}
+.hero-cta{ display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; }
+.hero-cue{
+  position:absolute; z-index:2; left:50%; bottom:1.9rem; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:.6rem;
+  font-size:.54rem; letter-spacing:.46em; text-transform:uppercase; color:var(--cream-45);
+}
+.cue-line{ width:1px; height:52px; background:rgba(253,248,243,.22); overflow:hidden; }
+.cue-line i{ display:block; width:100%; height:40%; background:var(--gold-2); animation:cue 2.1s var(--ease) infinite; }
+@keyframes cue{ 0%{ transform:translateY(-120%);} 100%{ transform:translateY(330%);} }
+
+/* entrance */
+.anim{ opacity:0; transform:translateY(30px); }
+body.loaded .anim{
+  opacity:1; transform:none;
+  transition:opacity 1s var(--ease), transform 1s var(--ease);
+  transition-delay:var(--ad, 0s);
+}
+
+/* ================= reveal ================= */
+.rv{ opacity:0; transform:translateY(34px); transition:opacity .95s var(--ease), transform .95s var(--ease); transition-delay:var(--rd, 0s); }
+.rv.in{ opacity:1; transform:none; }
+
+/* ================= ABOUT ================= */
+.about-grid{ display:grid; gap:3.2rem; align-items:center; }
+@media (min-width:1024px){ .about-grid{ grid-template-columns:.94fr 1.06fr; gap:5.5rem; } }
+.about-media{ position:relative; max-width:520px; }
+.about-media::before{
+  content:""; position:absolute; top:-1.2rem; left:-1.2rem; width:56%; height:56%;
+  border:1px solid var(--line-g); border-radius:2px;
+}
+.about-frame{ position:relative; overflow:hidden; border-radius:2px; box-shadow:0 34px 70px rgba(58,50,46,.18); }
+.about-frame img{ width:100%; aspect-ratio:4/5; object-fit:cover; transition:transform 1.3s var(--ease); }
+.about-frame:hover img{ transform:scale(1.05); }
+.about-chip{
+  position:absolute; right:-.8rem; bottom:2rem; background:var(--ink-2); color:var(--ivory);
+  padding:1.1rem 1.4rem; border:1px solid var(--line-g);
+  font-size:.56rem; font-weight:400; letter-spacing:.32em; text-transform:uppercase;
+  box-shadow:0 24px 50px rgba(46,39,36,.3); display:flex; align-items:center; gap:.7rem;
+}
+.about-chip svg{ width:14px; height:14px; color:var(--gold-2); }
+@media (min-width:768px){ .about-chip{ right:-1.6rem; } }
+
+.about-chips{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:2rem; }
+.about-chips span{
+  font-size:.6rem; font-weight:400; letter-spacing:.24em; text-transform:uppercase; color:var(--taupe);
+  border:1px solid var(--line-t); padding:.58rem 1rem; border-radius:999px;
+  transition:all .25s ease; min-height:36px; display:inline-flex; align-items:center;
+}
+.about-chips span:hover{ background:var(--ink-2); color:var(--gold-2); border-color:var(--ink-2); transform:translateY(-2px); }
+.signature{ font-family:var(--serif); font-style:italic; font-size:1.9rem; color:var(--taupe); margin-top:.6rem; }
+
+/* ================= SERVICES ================= */
+.services{ background:var(--blush-2); border-block:1px solid var(--line-t); }
+.svc-grid{ display:grid; gap:1.3rem; margin-top:3rem; }
+@media (min-width:768px){ .svc-grid{ grid-template-columns:1fr 1fr; gap:1.6rem; } }
+.svc{
+  position:relative; background:var(--card); border:1px solid var(--line-t); border-radius:2px;
+  padding:2.4rem 2.1rem 1.9rem; overflow:hidden;
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.svc::before{
+  content:""; position:absolute; top:0; left:0; right:0; height:2px; background:var(--gold);
+  transform:scaleX(0); transform-origin:left; transition:transform .45s var(--ease);
+}
+.svc:hover{ transform:translateY(-8px); box-shadow:0 30px 56px rgba(58,50,46,.14); border-color:rgba(184,152,95,.5); }
+.svc:hover::before{ transform:scaleX(1); }
+.svc-top{ display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:1.4rem; }
+.svc-ic{
+  width:54px; height:54px; border-radius:50%; border:1px solid var(--line-g); color:var(--gold-ink);
+  display:flex; align-items:center; justify-content:center;
+  transition:all .3s var(--pop);
+}
+.svc:hover .svc-ic{ background:var(--gold); color:var(--ink-2); border-color:var(--gold); transform:rotate(-8deg) scale(1.06); }
+.svc-ic svg{ width:21px; height:21px; stroke-width:1.3; }
+.svc-num{ font-size:.58rem; font-weight:400; letter-spacing:.3em; color:var(--ink-faint); }
+.svc h3{ font-size:1.8rem; margin-bottom:.6rem; }
+.svc p{ font-size:.9rem; color:var(--ink-soft); margin-bottom:1.1rem; }
+
+/* ================= GALLERY (masonry) ================= */
+.masonry{ margin-top:3rem; columns:1; column-gap:1.1rem; }
+@media (min-width:480px){ .masonry{ columns:2; } }
+@media (min-width:1024px){ .masonry{ columns:3; gap:1.3rem; } }
+.g-item{
+  position:relative; display:block; width:100%; overflow:hidden; border-radius:2px;
+  margin-bottom:1.1rem; background:var(--blush-2); break-inside:avoid; padding:0; text-align:left;
+  border:1px solid var(--line-t);
+}
+@media (min-width:1024px){ .g-item{ margin-bottom:1.3rem; } }
+.g-item img{ width:100%; transition:transform .8s var(--ease); }
+.g-item:hover img, .g-item:focus-visible img{ transform:scale(1.07); }
+.g-veil{
+  position:absolute; inset:0; background:linear-gradient(to top, rgba(46,39,36,.66), transparent 50%);
+  opacity:0; transition:opacity .45s ease;
+}
+.g-cap{
+  position:absolute; left:1.1rem; right:1.1rem; bottom:1rem; color:var(--ivory);
+  font-family:var(--serif); font-size:1.15rem; transform:translateY(10px); opacity:0;
+  transition:all .45s ease .05s;
+}
+.g-item:hover .g-veil, .g-item:focus-visible .g-veil{ opacity:1; }
+.g-item:hover .g-cap, .g-item:focus-visible .g-cap{ opacity:1; transform:none; }
+.g-plus{
+  position:absolute; top:.9rem; right:.9rem; width:36px; height:36px; border-radius:50%;
+  border:1px solid rgba(253,248,243,.5); color:var(--ivory);
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; transform:rotate(-90deg); transition:all .45s var(--ease);
+}
+.g-plus svg{ width:14px; height:14px; }
+.g-item:hover .g-plus{ opacity:1; transform:none; }
+
+/* ================= LIGHTBOX ================= */
+.lb{
+  position:fixed; inset:0; z-index:1000; background:rgba(35,29,26,.96);
+  display:flex; align-items:center; justify-content:center; padding:1.2rem;
+  opacity:0; visibility:hidden; transition:opacity .35s ease, visibility .35s ease;
+}
+.lb.open{ opacity:1; visibility:visible; }
+.lb-stage{ position:relative; max-width:min(980px, 94vw); }
+.lb-img{
+  max-height:76vh; max-width:100%; width:auto; margin-inline:auto;
+  border:1px solid var(--line-d); box-shadow:0 40px 90px rgba(0,0,0,.5);
+  transform:scale(.96); transition:transform .4s var(--ease);
+}
+.lb.open .lb-img{ transform:scale(1); }
+.lb-meta{
+  display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin-top:1rem;
+  color:var(--ivory); font-family:var(--serif);
+}
+.lb-meta .cap{ font-size:1.2rem; }
+.lb-meta .cnt{ font-size:.78rem; letter-spacing:.3em; color:var(--cream-45); font-family:var(--sans); }
+.lb-btn{
+  position:absolute; z-index:2; width:52px; height:52px; border-radius:50%;
+  border:1px solid rgba(253,248,243,.3); color:var(--ivory);
+  display:flex; align-items:center; justify-content:center; background:rgba(46,39,36,.5);
+  transition:all .25s ease;
+}
+.lb-btn:hover{ background:var(--gold); color:var(--ink-2); border-color:var(--gold); transform:scale(1.08); }
+.lb-btn svg{ width:20px; height:20px; }
+.lb-close{ top:1.2rem; right:1.2rem; position:fixed; }
+.lb-prev{ left:-.4rem; top:50%; transform:translateY(-50%); }
+.lb-next{ right:-.4rem; top:50%; transform:translateY(-50%); }
+.lb-prev:hover{ transform:translateY(-50%) scale(1.08); }
+.lb-next:hover{ transform:translateY(-50%) scale(1.08); }
+@media (min-width:768px){ .lb-prev{ left:-4.4rem; } .lb-next{ right:-4.4rem; } }
+
+/* ================= TESTIMONIALS ================= */
+.testi{ background:var(--blush-2); border-block:1px solid var(--line-t); }
+.t-shell{ position:relative; max-width:860px; margin:3rem auto 0; }
+.t-viewport{ overflow:hidden; }
+.t-track{ display:flex; transition:transform .7s var(--ease); }
+.t-slide{ min-width:100%; padding:0 1rem; text-align:center; }
+.t-mark{ font-family:var(--serif); font-size:5rem; line-height:.6; color:var(--gold); margin-bottom:1.6rem; }
+.t-q{
+  font-family:var(--serif); font-style:italic; font-weight:400;
+  font-size:clamp(1.4rem, 3vw, 2rem); line-height:1.5; color:var(--ink-2); max-width:44ch; margin-inline:auto;
+}
+.t-by{ margin-top:1.8rem; font-size:.6rem; font-weight:500; letter-spacing:.3em; text-transform:uppercase; color:var(--taupe); }
+.t-by b{ display:block; font-family:var(--serif); font-weight:600; font-size:1.05rem; letter-spacing:.08em; text-transform:none; color:var(--ink-2); margin-bottom:.3rem; }
+.t-nav{
+  position:absolute; top:38%; width:48px; height:48px; border-radius:50%;
+  border:1px solid var(--line-g); color:var(--gold-ink); background:transparent;
+  display:flex; align-items:center; justify-content:center; transition:all .25s ease; z-index:2;
+}
+.t-nav:hover{ background:var(--gold); color:var(--ink-2); border-color:var(--gold); transform:scale(1.08); }
+.t-nav svg{ width:18px; height:18px; }
+.t-prev{ left:-.5rem; } .t-next{ right:-.5rem; }
+@media (min-width:900px){ .t-prev{ left:-5rem; } .t-next{ right:-5rem; } }
+.t-dots{ display:flex; justify-content:center; gap:.6rem; margin-top:2.4rem; }
+.t-dots button{
+  width:44px; height:44px; display:flex; align-items:center; justify-content:center;
+}
+.t-dots button i{
+  width:7px; height:7px; border-radius:50%; background:var(--line-g);
+  transition:all .3s ease; display:block;
+}
+.t-dots button.on i{ background:var(--gold); transform:scale(1.5); }
+
+/* ================= INSTAGRAM ================= */
+.ig-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:.6rem; margin-top:2.6rem; }
+@media (min-width:1024px){ .ig-grid{ grid-template-columns:repeat(6,1fr); gap:.9rem; } }
+.ig-item{
+  position:relative; display:block; aspect-ratio:1; overflow:hidden; border-radius:2px;
+  border:1px solid var(--line-t);
+}
+.ig-item img{ width:100%; height:100%; object-fit:cover; transition:transform .7s var(--ease); }
+.ig-item:hover img{ transform:scale(1.1); }
+.ig-item .ig-ov{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  background:rgba(184,152,95,.0); color:var(--ivory); opacity:0; transition:all .35s ease;
+}
+.ig-item:hover .ig-ov{ background:rgba(58,50,46,.45); opacity:1; }
+.ig-item .ig-ov svg{ width:22px; height:22px; }
+
+/* ================= CONTACT / BOOKING ================= */
+.contact-grid{ display:grid; gap:2.2rem; margin-top:3rem; }
+@media (min-width:1024px){ .contact-grid{ grid-template-columns:.92fr 1.08fr; gap:3.5rem; } }
+
+.direct-card{
+  display:flex; align-items:center; gap:1.2rem; background:var(--card);
+  border:1px solid var(--line-t); border-radius:2px; padding:1.4rem 1.5rem;
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.direct-card:hover{ transform:translateY(-5px); box-shadow:0 22px 44px rgba(58,50,46,.12); border-color:rgba(184,152,95,.5); }
+.direct-card + .direct-card{ margin-top:1.1rem; }
+.direct-ic{
+  flex:none; width:52px; height:52px; border-radius:50%; border:1px solid var(--line-g);
+  color:var(--gold-ink); display:flex; align-items:center; justify-content:center;
+}
+.direct-ic svg{ width:20px; height:20px; stroke-width:1.4; }
+.direct-card b{ font-weight:500; font-size:.62rem; letter-spacing:.28em; text-transform:uppercase; color:var(--gold-ink); display:block; }
+.direct-card span{ font-size:.95rem; color:var(--ink); }
+.direct-note{ margin-top:1.6rem; font-size:.84rem; color:var(--ink-soft); display:flex; gap:.8rem; align-items:flex-start; }
+.direct-note svg{ flex:none; width:16px; height:16px; color:var(--gold-ink); margin-top:.35rem; }
+
+.form-card{
+  background:var(--ivory); border:1px solid var(--line-t); border-radius:2px;
+  padding:clamp(1.6rem, 4vw, 2.6rem); box-shadow:0 30px 60px rgba(58,50,46,.1);
+}
+.form-title{ font-size:1.7rem; margin-bottom:.4rem; }
+.form-sub{ font-size:.82rem; color:var(--ink-soft); margin-bottom:1.8rem; }
+.f-grid{ display:grid; gap:1.3rem; }
+@media (min-width:640px){ .f-grid{ grid-template-columns:1fr 1fr; } .f-full{ grid-column:1 / -1; } }
+.field{ position:relative; }
+.field label{
+  display:block; font-size:.58rem; font-weight:500; letter-spacing:.3em; text-transform:uppercase;
+  color:var(--taupe); margin-bottom:.4rem;
+}
+.field label i{ font-style:normal; color:var(--gold-ink); }
+.field input, .field textarea{
+  width:100%; background:transparent; border:0; border-bottom:1px solid var(--line-t);
+  padding:.65rem .1rem; font:inherit; color:var(--ink-2); border-radius:0;
+  transition:border-color .25s ease; min-height:44px;
+}
+.field textarea{ resize:vertical; min-height:88px; }
+.field input::placeholder, .field textarea::placeholder{ color:var(--ink-faint); font-weight:300; }
+.field input:focus, .field textarea:focus{ outline:none; border-bottom-color:var(--gold); }
+.field.error input, .field.error textarea{ border-bottom-color:var(--err); }
+.f-err{
+  position:absolute; left:0; top:calc(100% + 2px); font-size:.64rem; letter-spacing:.06em;
+  color:var(--err); opacity:0; transform:translateY(-4px); transition:all .25s ease; pointer-events:none;
+}
+.field.error .f-err{ opacity:1; transform:none; }
+.field.has-err-space{ margin-bottom:.4rem; }
+input[type="date"]{ appearance:none; -webkit-appearance:none; color:var(--ink); }
+input[type="date"]::-webkit-calendar-picker-indicator{ opacity:.55; cursor:pointer; }
+.form-foot{ margin-top:1.8rem; display:flex; flex-wrap:wrap; align-items:center; gap:1.2rem; }
+.form-hint{ font-size:.7rem; color:var(--ink-faint); }
+.form-success{
+  display:none; text-align:center; padding:2.6rem 1rem;
+}
+.form-success.show{ display:block; animation:fadeUp .6s var(--ease) both; }
+@keyframes fadeUp{ from{ opacity:0; transform:translateY(16px);} to{ opacity:1; transform:none;} }
+.form-success .ok{
+  width:64px; height:64px; border-radius:50%; border:1px solid var(--gold); color:var(--gold-ink);
+  display:flex; align-items:center; justify-content:center; margin:0 auto 1.4rem;
+}
+.form-success .ok svg{ width:26px; height:26px; }
+.form-success h3{ font-size:1.9rem; margin-bottom:.6rem; }
+.form-success p{ color:var(--ink-soft); font-size:.9rem; }
+
+/* ================= FOOTER ================= */
+footer{ background:var(--ink-2); color:var(--cream-45); padding:3.6rem 0 1.8rem; text-align:center; }
+.f-brand{ display:inline-flex; flex-direction:column; align-items:center; gap:1rem; }
+.f-brand .mono{ border-color:var(--gold-2); color:var(--gold-2); width:54px; height:54px; font-size:1.3rem; }
+.f-brand .n{ font-family:var(--serif); font-weight:600; font-size:1.4rem; color:var(--ivory); }
+.f-brand .s{ font-size:.54rem; font-weight:400; letter-spacing:.44em; text-transform:uppercase; color:var(--gold-2); }
+.f-soc{ display:flex; justify-content:center; gap:.9rem; margin:1.7rem 0; }
+.f-soc a{
+  width:46px; height:46px; border-radius:50%; border:1px solid var(--line-d); color:var(--cream-75);
+  display:flex; align-items:center; justify-content:center; transition:all .25s ease;
+}
+.f-soc a:hover{ background:var(--gold); color:var(--ink-2); border-color:var(--gold); transform:translateY(-4px); }
+.f-soc svg{ width:16px; height:16px; }
+.f-rule{ width:min(440px,70%); height:1px; background:var(--line-d); margin:0 auto 1.5rem; }
+footer small{ display:block; font-size:.6rem; font-weight:300; letter-spacing:.26em; text-transform:uppercase; }
+footer small.top{ margin-top:.7rem; }
+footer a.totop{ color:var(--gold-2); transition:color .25s ease; }
+footer a.totop:hover{ color:var(--ivory); }
+footer a.totop svg{ width:12px; height:12px; vertical-align:-1px; margin-left:.3rem; }
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
+  .rv,.anim{ opacity:1; transform:none; }
+  html{ scroll-behavior:auto; }
+}/* --- missing variables (add to :root if not there) --- */
+:root{
+  --serif:"Cormorant Garamond","Times New Roman",serif;
+  --sans:"Poppins",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --pop:cubic-bezier(.34,1.56,.64,1);
+  --err:#b3473f;
+}
+ol{ list-style:none; }
+
+/* --- nav --- */
+.nav-links{ gap:1.5rem; }
+.nav-links a.nav-cta{
+  background:var(--gold); color:var(--ink-2); border-radius:999px;
+  padding:.55rem 1.4rem; min-height:40px; margin-left:.4rem;
+  transition:transform .25s ease, background-color .25s ease, box-shadow .25s ease;
+}
+.nav-links a.nav-cta::after{ display:none; }
+.nav-links a.nav-cta:hover, .site-nav.scrolled .nav-links a.nav-cta:hover{
+  background:var(--gold-2); color:var(--ink-2); transform:scale(1.05); box-shadow:0 10px 26px rgba(184,152,95,.45);
+}
+@media (min-width:1100px){ .nav-links{ display:flex; } .burger{ display:none; } }
+@media (max-width:1279px){ .brand-t .s{ display:none; } }
+.m-menu li:nth-child(7) a{ transition-delay:.42s }
+.m-menu a.m-link.m-book{ color:var(--gold-2); }
+
+/* --- trust bar --- */
+.trust{ background:var(--ink-2); padding:2.8rem 0; }
+.trust-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.8rem 1rem; text-align:center; }
+@media (min-width:768px){ .trust-grid{ grid-template-columns:repeat(4,1fr); } }
+.trust-grid b{ display:block; font-family:var(--serif); font-weight:500; font-size:clamp(2.2rem,4vw,3rem); color:var(--gold-2); line-height:1.1; }
+.trust-grid span{ font-size:.6rem; letter-spacing:.3em; text-transform:uppercase; color:var(--cream-45); }
+
+/* --- extensions + classes --- */
+.split{ display:grid; gap:3rem; align-items:center; }
+@media (min-width:900px){
+  .split{ grid-template-columns:1fr 1fr; gap:5rem; }
+  .split.rev .split-media{ order:2; }
+}
+.split-media{ position:relative; }
+.split-media::before{
+  content:""; position:absolute; bottom:-1.1rem; right:-1.1rem; width:56%; height:56%;
+  border:1px solid var(--line-g); border-radius:2px;
+}
+.split-frame{ position:relative; overflow:hidden; border-radius:2px; box-shadow:0 34px 70px rgba(58,50,46,.16); }
+.split-frame img{ width:100%; aspect-ratio:4/5; object-fit:cover; transition:transform 1.3s var(--ease); }
+.split-frame:hover img{ transform:scale(1.05); }
+.split .btn{ margin-top:2rem; }
+.classes{ background:var(--blush-2); border-block:1px solid var(--line-t); }
+
+/* --- worldwide --- */
+.world{ background:var(--ink-2); color:var(--ivory); text-align:center; }
+.world .lead{ color:var(--cream-75); margin:1.2rem auto 0; }
+.places{ display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; margin-top:3rem; }
+.place{
+  min-width:150px; padding:1.4rem 2rem; border:1px solid var(--line-d); border-radius:2px;
+  transition:border-color .3s ease, transform .3s ease, background-color .3s ease;
+}
+.place:hover{ border-color:var(--gold-2); transform:translateY(-5px); background:rgba(251,248,252,.04); }
+.place b{ display:block; font-family:var(--serif); font-weight:500; font-size:1.7rem; color:var(--ivory); }
+.place span{ font-size:.56rem; letter-spacing:.32em; text-transform:uppercase; color:var(--gold-2); }
+
+/* --- process --- */
+.steps{ display:grid; gap:1.6rem; margin-top:3rem; counter-reset:step; }
+@media (min-width:768px){ .steps{ grid-template-columns:repeat(4,1fr); gap:1.8rem; } }
+.steps li{ counter-increment:step; border-top:1px solid var(--line-g); padding-top:1.4rem; }
+.steps li::before{ content:counter(step); display:block; font-family:var(--serif); font-size:2.6rem; color:var(--gold); line-height:1; margin-bottom:.8rem; }
+.steps h3{ font-size:1.6rem; margin-bottom:.4rem; }
+.steps p{ font-size:.88rem; color:var(--ink-soft); }
+
+/* --- faq --- */
+.faq{ max-width:820px; margin:3rem auto 0; }
+.faq details{ border-bottom:1px solid var(--line-t); }
+.faq summary{
+  display:flex; align-items:center; justify-content:space-between; gap:1.2rem;
+  cursor:pointer; list-style:none; padding:1.4rem 0; min-height:56px;
+  font-family:var(--serif); font-weight:500; font-size:clamp(1.25rem,2.4vw,1.6rem); color:var(--ink-2);
+}
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{
+  content:"+"; flex:none; width:34px; height:34px; border-radius:50%; border:1px solid var(--line-g);
+  display:flex; align-items:center; justify-content:center; color:var(--gold-ink); font-family:var(--sans); font-size:1.2rem; line-height:1;
+  transition:transform .3s ease, background-color .3s ease, color .3s ease;
+}
+.faq details[open] summary::after{ transform:rotate(45deg); background:var(--gold); color:var(--ink-2); border-color:var(--gold); }
+.faq details p{ padding:0 3rem 1.5rem 0; color:var(--ink-soft); font-size:.95rem; }
+
+/* --- footer overlap fix --- */
+.f-brand .f-txt{ display:flex; flex-direction:column; align-items:center; gap:.45rem; }
+.f-brand .n, .f-brand .s{ display:block; } .reels{ display:grid; gap:1.2rem; margin-top:3rem; grid-template-columns:repeat(3,1fr); }
+@media (max-width:800px){
+  .reels{ display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:1rem; padding-bottom:.6rem; }
+  .reel{ flex:0 0 72%; scroll-snap-align:center; }
+}
+.reel{
+  position:relative; overflow:hidden; border-radius:2px; background:var(--ink-2);
+  border:1px solid var(--line-t); box-shadow:0 30px 60px rgba(58,50,46,.14);
+  aspect-ratio:9/16;
+}
+.reel video{ width:100%; height:100%; object-fit:cover; display:block; }
+.reel figcaption{
+  position:absolute; left:1rem; bottom:1rem; right:4rem; color:var(--ivory);
+  font-family:var(--serif); font-size:1.15rem; text-shadow:0 2px 12px rgba(0,0,0,.5);
+}
+.reel::after{
+  content:""; position:absolute; inset:auto 0 0 0; height:40%; pointer-events:none;
+  background:linear-gradient(to top, rgba(43,34,48,.7), transparent);
+}
+.reel figcaption, .reel-btn{ z-index:2; }
+.reel-btn{
+  position:absolute; right:.9rem; bottom:.9rem; width:44px; height:44px; border-radius:50%;
+  border:1px solid rgba(253,248,243,.5); color:var(--ivory); background:rgba(43,34,48,.45);
+  display:flex; align-items:center; justify-content:center; transition:all .25s ease;
+}
+.reel-btn:hover{ background:var(--gold); color:var(--ink-2); border-color:var(--gold); transform:scale(1.08); }
+.reel-btn svg{ width:18px; height:18px; }
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="site-nav" id="siteNav">
+  <div class="container nav-wrap">
+    <a class="brand" href="#home" aria-label="Hair by Neelam Sagar — home">
+      <span class="mono" aria-hidden="true">NS</span>
+      <span class="brand-t">
+        <span class="n">Hair by Neelam Sagar</span>
+        <span class="s">Bridal · Editorial · Destination</span>
+      </span>
+    </a>
+
+   <nav class="nav-links" aria-label="Primary navigation">
+  <a href="#home" class="nav-a">Home</a>
+  <a href="service.html">Services</a>
+  <a href="/hair-extensions">Hair Extensions</a>
+  <a href="/hairstyle-classes">Classes</a>
+  <a href="/portfolio">Portfolio</a>
+  <a href="#contact" class="nav-a">Contact</a>
+  <a href="#contact" class="nav-cta">Book Now</a>
+</nav>
+
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mMenu">
+      <span class="burger-box"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="m-menu" id="mMenu" aria-hidden="true">
+ <ul>
+  <li><a class="m-link" href="#home">Home</a></li>
+  <li><a class="m-link" href="/service.html">Services</a></li>
+  <li><a class="m-link" href="/hair-extensions">Hair Extensions</a></li>
+  <li><a class="m-link" href="/hairstyle-classes">Classes</a></li>
+  <li><a class="m-link" href="/portfolio">Portfolio</a></li>
+  <li><a class="m-link" href="#contact">Contact</a></li>
+  <li><a class="m-link m-book" href="#contact">Book Now</a></li>
+</ul>
+  <div class="m-extra">
+    <a href="https://wa.me/919582550707" target="_blank" rel="noopener" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+    <a href="https://www.instagram.com/hairbyneelamsagar" target="_blank" rel="noopener" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+  </div>
+</div>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-bg" role="img" aria-label="Bride in a white dress with an elegant sculpted updo, seen from behind"></div>
+  <div class="hero-veil"></div>
+
+  <div class="container hero-content">
+    <p class="hero-eyebrow anim" style="--ad:.1s">Bridal · Editorial · Destination</p>
+    <h1 class="anim" style="--ad:.22s">Hair by <em>Neelam Sagar</em></h1>
+    <p class="hero-tag anim" style="--ad:.36s">Bridal &amp; Editorial Hair Artistry</p>
+    <p class="hero-sub anim" style="--ad:.46s">Delhi · Available Worldwide</p>
+    <div class="hero-cta anim" style="--ad:.6s">
+      <a class="btn btn-gold" href="#contact">Book Now <i data-lucide="arrow-right"></i></a>
+      <a class="btn btn-line" href="#gallery">View the Work</a>
+    </div>
+  </div>
+
+  <div class="hero-cue anim" style="--ad:.85s">
+    <span>Scroll</span>
+    <span class="cue-line"><i></i></span>
+  </div>
+</section>
+<div class="trust">
+  <div class="container trust-grid">
+    <div><b>10+</b><span>Years of experience</span></div>
+    <div><b>50+</b><span>Celebrity &amp; editorial clients</span></div>
+    <div><b>5</b><span>Countries styled in</span></div>
+    <div><b>500+</b><span>Students trained</span></div>
+  </div>
+</div>
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-media rv">
+        <div class="about-frame">
+          <img src="owner.png" alt="Neelam styling a bride's hair with delicate floral accessories" loading="lazy">
+        </div>
+        <div class="about-chip"><i data-lucide="plane"></i> Delhi base · Worldwide by arrangement</div>
+      </div>
+
+      <div>
+        <p class="label rv">01 · About</p>
+        <h2 class="h-display rv" style="--rd:.08s">Quiet hands,<br><em>unforgettable</em> hair.</h2>
+        <p class="lead rv" style="--rd:.16s; margin-top:1.6rem;">Neelam Sagar is a professional freelance hairstylist based in Delhi, trusted by brides and creative teams across the world. From hushed morning-of rituals to couture week chaos, she brings the same calm precision — hair that looks effortless, and simply refuses to fall apart.</p>
+        <p class="lead rv" style="--rd:.24s; margin-top:1.2rem;">Fully freelance and flight-ready, Neelam travels globally for her clients: destination weddings, editorial shoots, and every celebration in between.</p>
+
+        <div class="divider rv" style="--rd:.3s"><span class="d-mono">NS</span></div>
+
+        <p class="signature rv" style="--rd:.34s">— Neelam</p>
+
+        <div class="about-chips rv" style="--rd:.4s">
+          <span>Bridal Specialist</span>
+          <span>Editorial Regular</span>
+          <span>Destination-Ready</span>
+          <span>Trial Sessions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-head" style="max-width:700px">
+      <p class="label rv">02 · Services</p>
+      <h2 class="h-display rv" style="--rd:.08s">Wherever the <em>occasion,</em><br>the hair follows.</h2>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc rv" style="--rd:.05s">
+        <div class="svc-top"><span class="svc-ic"><i data-lucide="crown"></i></span><span class="svc-num">No. 01</span></div>
+        <h3>Bridal Hair</h3>
+        <p>The morning-of ritual, done beautifully — trials, veil setting and styling that holds from the first look to the last dance.</p>
+        <a class="link-arrow" href="#contact">Enquire <i data-lucide="arrow-right"></i></a>
+      </article>
+
+      <article class="svc rv" style="--rd:.15s">
+        <div class="svc-top"><span class="svc-ic"><i data-lucide="aperture"></i></span><span class="svc-num">No. 02</span></div>
+        <h3>Editorial &amp; Shoots</h3>
+        <p>Campaign, cover and couture-week hair — sculpted for the lens, built precisely to the creative brief.</p>
+        <a class="link-arrow" href="#contact">Enquire <i data-lucide="arrow-right"></i></a>
+      </article>
+
+      <article class="svc rv" style="--rd:.25s">
+        <div class="svc-top"><span class="svc-ic"><i data-lucide="sparkles"></i></span><span class="svc-num">No. 03</span></div>
+        <h3>Party &amp; Event Styling</h3>
+        <p>Sangeets, soirées and everything in between — soft, polished glamour that survives the dance floor.</p>
+        <a class="link-arrow" href="#contact">Enquire <i data-lucide="arrow-right"></i></a>
+      </article>
+
+      <article class="svc rv" style="--rd:.35s">
+        <div class="svc-top"><span class="svc-ic"><i data-lucide="plane"></i></span><span class="svc-num">No. 04</span></div>
+        <h3>Destination Bookings</h3>
+        <p>Fully flight-ready with a kit that travels light — Udaipur to Lake Como, Neelam comes to you.</p>
+        <a class="link-arrow" href="#contact">Enquire <i data-lucide="arrow-right"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="section" id="extensions">
+  <div class="container split">
+    <div class="split-media rv">
+      <div class="split-frame">
+        <img src="photo 9.jpg" alt="Hair extensions by Neelam Sagar in Delhi and Mumbai" loading="lazy">
+      </div>
+    </div>
+    <div>
+      <p class="label rv">03 · Hair Extensions</p>
+      <h2 class="h-display rv" style="--rd:.08s">Hair extensions in <em>Delhi &amp; Mumbai.</em></h2>
+      <p class="lead rv" style="--rd:.16s; margin-top:1.6rem;">Natural-looking length and volume for brides, shoots and special days, fitted and styled by Neelam herself.</p>
+      <div class="about-chips rv" style="--rd:.24s">
+        <span>Clip-in</span><span>Bridal volume</span><span>Natural &amp; fake hair</span><span>Care guidance</span>
+      </div>
+      <a class="btn btn-gold rv" style="--rd:.3s" href="/hair-extensions">See Extensions <i data-lucide="arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="section classes" id="classes">
+  <div class="container split rev">
+    <div class="split-media rv">
+      <div class="split-frame">
+        <img src="neelam with sakshi malik standing.jpeg" alt="Hairstyle classes with Neelam Sagar" loading="lazy">
+      </div>
+    </div>
+    <div>
+      <p class="label rv">04 · Classes</p>
+      <h2 class="h-display rv" style="--rd:.08s">Learn hairstyling from a <em>celebrity stylist.</em></h2>
+      <p class="lead rv" style="--rd:.16s; margin-top:1.6rem;">Step-by-step classes covering bridal looks, party styles and extension work. Hands-on practice, small batches.</p>
+      <div class="about-chips rv" style="--rd:.24s">
+        <span>Beginner course</span><span>Advanced bridal</span><span>1-on-1 sessions</span><span>Certificate</span>
+      </div>
+      <a class="btn btn-outline-dark rv" style="--rd:.3s" href="/hairstyle-classes">View Classes <i data-lucide="arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+<!-- ================= GALLERY ================= -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section-head" style="text-align:center; max-width:640px; margin-inline:auto;">
+      <p class="label center rv">03 · Portfolio</p>
+      <h2 class="h-display rv" style="--rd:.08s">Selected <em>work.</em></h2>
+    </div>
+
+    <div class="masonry" id="gGrid">
+      <button class="g-item rv" data-cap="Pearl-Set Bridal Updo" data-full="https://images.pexels.com/photos/31255042/pexels-photo-31255042.jpeg?auto=compress&cs=tinysrgb&w=1500" aria-label="Open image: Pearl-Set Bridal Updo">
+        <img src="photo main.jpg" alt="Overhead view of a bridal updo set with pearls" loading="lazy">
+        <span class="g-veil"></span><span class="g-plus"><i data-lucide="plus"></i></span><span class="g-cap">Pearl-Set Bridal Updo</span>
+      </button>
+
+      <button class="g-item rv" style="--rd:.08s" data-cap="The Braided Trail" data-full="https://images.pexels.com/photos/13212603/pexels-photo-13212603.jpeg?auto=compress&cs=tinysrgb&w=1500" aria-label="Open image: The Braided Trail">
+        <img src="sakshi malik.jpeg" alt="Intricate braid being woven into long hair" loading="lazy">
+        <span class="g-veil"></span><span class="g-plus"><i data-lucide="plus"></i></span><span class="g-cap">The Braided Trail</span>
+      </button>
+
+      <button class="g-item rv" style="--rd:.16s" data-cap="Jewelled Knot" data-full="https://images.pexels.com/photos/20874817/pexels-photo-20874817.jpeg?auto=compress&cs=tinysrgb&w=1500" aria-label="Open image: Jewelled Knot">
+        <img src="bridal makeup.jpg" alt="Bridal updo with a jewelled hairpiece, backless dress" loading="lazy">
+        <span class="g-veil"></span><span class="g-plus"><i data-lucide="plus"></i></span><span class="g-cap">Jewelled Knot</span>
+      </button>
+
+      <button class="g-item rv" style="--rd:.1s" data-cap="Morning-Of, In Progress" data-full="https://images.pexels.com/photos/36553505/pexels-photo-36553505.jpeg?auto=compress&cs=tinysrgb&w=1500" aria-label="Open image: Morning-Of, In Progress">
+        <img src="photo4.jpg" alt="Bride getting ready with her hairstylist on the wedding morning" loading="lazy">
+        <span class="g-veil"></span><span class="g-plus"><i data-lucide="plus"></i></span><span class="g-cap">Morning-Of, In Progress</span>
+      </button>
+
+      <button class="g-item rv" style="--rd:.18s" data-cap="Feathered Fantasy" data-full="https://images.pexels.com/photos/9784229/pexels-photo-9784229.jpeg?auto=compress&cs=tinysrgb&w=1500" aria-label="Open image: Feathered Fantasy">
+        <img src="photo5.jpg" alt="Editorial updo adorned with soft feathers" loading="lazy">
+        <span class="g-veil"></span><span class="g-plus"><i data-lucide="plus"></i></span><span class="g-cap">Feathered Fantasy</span>
+      </button>
+
+      <button class="g-item rv" style="--rd:.26s" data-cap="Set Waves" data-full="https://images.pexels.com/photos/30005366/pexels-photo-30005366.jpeg?auto=compress&cs=tinysrgb&w=1500" aria-label="Open image: Set Waves">
+        <img src="photo2.jpg" alt="Curling iron setting waves for a bridal style with hairpiece" loading="lazy">
+        <span class="g-veil"></span><span class="g-plus"><i data-lucide="plus"></i></span><span class="g-cap">Set Waves</span>
+      </button>
+
+      <button class="g-item rv" style="--rd:.14s" data-cap="Sunlit Lengths" data-full="https://images.pexels.com/photos/13788286/pexels-photo-13788286.jpeg?auto=compress&cs=tinysrgb&w=1500" aria-label="Open image: Sunlit Lengths">
+        <img src="photo 9.jpg" alt="Long soft waves from behind, flowing in natural light" loading="lazy">
+        <span class="g-veil"></span><span class="g-plus"><i data-lucide="plus"></i></span><span class="g-cap">Sunlit Lengths</span>
+      </button>
+
+      <!-- <button class="g-item rv" style="--rd:.22s" data-cap="Noir Bloom" data-full="https://images.pexels.com/photos/7149605/pexels-photo-7149605.jpeg?auto=compress&cs=tinysrgb&w=1500" aria-label="Open image: Noir Bloom">
+        <img src="photo8.jpg" alt="Black and white study of a floral bridal hairstyle" loading="lazy">
+        <span class="g-veil"></span><span class="g-plus"><i data-lucide="plus"></i></span><span class="g-cap">Noir Bloom</span>
+      </button> -->
+    </div>
+  </div>
+</section> <section class="section" id="reels">
+  <div class="container">
+    <div class="section-head" style="text-align:center; max-width:640px; margin-inline:auto;">
+      <p class="label center rv">Reels</p>
+      <h2 class="h-display rv" style="--rd:.08s">Hair in <em>motion.</em></h2>
+    </div>
+
+    <div class="reels">
+      <figure class="reel rv" style="--rd:.08s">
+        <video src="editorial look sakshi malik.mp4" poster="videos/editorial-1.jpg"
+               muted loop playsinline preload="none"
+               aria-label="Editorial hairstyle video by Neelam Sagar"></video>
+        <button class="reel-btn" aria-label="Unmute video"><i data-lucide="volume-x"></i></button>
+        <figcaption>Editorial look</figcaption>
+      </figure>
+      <figure class="reel rv" style="--rd:.16s">
+        <video src="editorial video 2.mp4" poster="videos/extensions-1.jpg"
+               muted loop playsinline preload="none"
+               aria-label="Hair extensions video by Neelam Sagar"></video>
+        <button class="reel-btn" aria-label="Unmute video"><i data-lucide="volume-x"></i></button>
+        <figcaption>Hair extensions</figcaption>
+      </figure>
+      <figure class="reel rv">
+        <video src="bridal video.mp4" poster="videos/bridal-1.jpg"
+               muted loop playsinline preload="none"
+               aria-label="Bridal hairstyle video by Neelam Sagar"></video>
+        <button class="reel-btn" aria-label="Unmute video"><i data-lucide="volume-x"></i></button>
+        <figcaption>Bridal updo</figcaption>
+      </figure>
+
+
+    </div>
+  </div>
+</section>
+<section class="section world" id="worldwide">
+  <div class="container">
+    <div class="on-dark">
+      <p class="label center on-dark rv">06 · Worldwide</p>
+      <h2 class="h-display rv" style="--rd:.08s">Based in Delhi &amp; Mumbai,<br><em>booked worldwide.</em></h2>
+      <p class="lead rv" style="--rd:.14s">Neelam travels with a light, flight-ready kit for destination weddings, shoots and celebrity events.</p>
+    </div>
+    <div class="places">
+      <div class="place rv" style="--rd:.05s"><b>Delhi</b><span>Home base</span></div>
+      <div class="place rv" style="--rd:.12s"><b>Mumbai</b><span>Home base</span></div>
+      <div class="place rv" style="--rd:.19s"><b>Dubai</b><span>Styled here</span></div>
+      <div class="place rv" style="--rd:.26s"><b>Thailand</b><span>Styled here</span></div>
+      <div class="place rv" style="--rd:.33s"><b>Bali</b><span>Styled here</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-head" style="max-width:700px">
+      <p class="label rv">07 · Process</p>
+      <h2 class="h-display rv" style="--rd:.08s">How booking <em>works.</em></h2>
+    </div>
+    <ol class="steps">
+      <li class="rv" style="--rd:.05s"><h3>Enquire</h3><p>Send your date, city and look on WhatsApp or the form.</p></li>
+      <li class="rv" style="--rd:.13s"><h3>Consult</h3><p>Neelam replies personally, usually within 24 hours.</p></li>
+      <li class="rv" style="--rd:.21s"><h3>Trial</h3><p>Try your look beforehand for bridal and event bookings.</p></li>
+      <li class="rv" style="--rd:.29s"><h3>Day of</h3><p>Neelam arrives on time and styles you start to finish.</p></li>
+    </ol>
+  </div>
+</section>
+<!-- ================= TESTIMONIALS ================= -->
+<section class="section testi" id="testimonials">
+  <div class="container">
+    <div class="section-head" style="text-align:center; max-width:640px; margin-inline:auto;">
+      <p class="label center rv">04 · Testimonials</p>
+      <h2 class="h-display rv" style="--rd:.08s">Words from the <em>chair.</em></h2>
+    </div>
+
+    <div class="t-shell rv" style="--rd:.15s">
+      <button class="t-nav t-prev" id="tPrev" aria-label="Previous testimonial"><i data-lucide="chevron-left"></i></button>
+
+      <div class="t-viewport" id="tViewport">
+        <div class="t-track" id="tTrack">
+          <figure class="t-slide">
+            <div class="t-mark">&ldquo;</div>
+            <blockquote class="t-q">Neelam made me feel like the most beautiful version of myself — my hair didn't move for fourteen hours, and I cried twice.</blockquote>
+            <figcaption class="t-by"><b>Ananya R.</b> Bride · Udaipur</figcaption>
+          </figure>
+
+          <figure class="t-slide">
+            <div class="t-mark">&ldquo;</div>
+            <blockquote class="t-q">The rare stylist who truly understands light. Neelam's hair reads beautifully on camera, in every single frame.</blockquote>
+            <figcaption class="t-by"><b>Ritvik M.</b> Fashion Photographer · Mumbai</figcaption>
+          </figure>
+
+          <figure class="t-slide">
+            <div class="t-mark">&ldquo;</div>
+            <blockquote class="t-q">She flew to Lake Como for our wedding and handled three events, twelve people and impossible humidity without blinking.</blockquote>
+            <figcaption class="t-by"><b>Priya &amp; Arjun</b> Destination Wedding · Lake Como</figcaption>
+          </figure>
+
+          <figure class="t-slide">
+            <div class="t-mark">&ldquo;</div>
+            <blockquote class="t-q">Effortless, punctual and quietly brilliant. I simply won't book anyone else — for shoots or sangeets.</blockquote>
+            <figcaption class="t-by"><b>Meher K.</b> Returning Client · Delhi</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <button class="t-nav t-next" id="tNext" aria-label="Next testimonial"><i data-lucide="chevron-right"></i></button>
+    </div>
+
+    <div class="t-dots" id="tDots" role="tablist" aria-label="Choose testimonial"></div>
+  </div>
+</section>
+<section class="section services" id="faq">
+  <div class="container">
+    <div class="section-head" style="text-align:center; max-width:640px; margin-inline:auto;">
+      <p class="label center rv">10 · FAQ</p>
+      <h2 class="h-display rv" style="--rd:.08s">Questions, <em>answered.</em></h2>
+    </div>
+    <div class="faq rv" style="--rd:.12s">
+      <details><summary>Which cities do you work in?</summary><p>Delhi and Mumbai are home bases. Neelam also travels for destination weddings and shoots, including Dubai, Thailand and Bali.</p></details>
+      <details><summary>How early should I book bridal hair?</summary><p>For wedding season, book 2 to 3 months ahead. For shorter notice, message on WhatsApp.</p></details>
+      <details><summary>Do you offer hair extensions?</summary><p>Yes. Extensions are fitted, blended and styled to match your hair.</p></details>
+      <details><summary>Do you teach hairstyling classes?</summary><p>Yes. Beginner and advanced classes, plus 1-on-1 sessions.</p></details>
+      <details><summary>Is a trial available before the wedding?</summary><p>Yes, trials are available for bridal and event bookings.</p></details>
+      <details><summary>How do I book?</summary><p>Use the booking form or WhatsApp +91 95825 50707. No payment needed to start.</p></details>
+    </div>
+  </div>
+</section>
+<!-- ================= INSTAGRAM ================= -->
+<section class="section" id="instagram" style="padding-top:0">
+  <div class="container">
+    <div class="section-head" style="text-align:center; max-width:640px; margin-inline:auto;">
+      <p class="label center rv">05 · Instagram</p>
+      <h2 class="h-display rv" style="--rd:.08s">Follow <em>@hairbyneelamsagar</em></h2>
+      <p class="lead rv" style="--rd:.14s; margin:1rem auto 0; text-align:center;">New work, behind-the-chair moments and destination diaries — updated after every booking.</p>
+    </div>
+
+    <div class="ig-grid rv" style="--rd:.18s">
+      <a class="ig-item" href="https://www.instagram.com/hairbyneelamsagar" target="_blank" rel="noopener" aria-label="View on Instagram: bridal updo with bouquet">
+        <img src="https://images.pexels.com/photos/8501679/pexels-photo-8501679.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=600&h=600" alt="Bride with elegant updo holding white roses" loading="lazy">
+        <span class="ig-ov"><i data-lucide="instagram"></i></span>
+      </a>
+      <a class="ig-item" href="https://www.instagram.com/hairbyneelamsagar" target="_blank" rel="noopener" aria-label="View on Instagram: floral updo detail">
+        <img src="https://images.pexels.com/photos/2995337/pexels-photo-2995337.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=600&h=600" alt="Updo woven with fresh flowers" loading="lazy">
+        <span class="ig-ov"><i data-lucide="instagram"></i></span>
+      </a>
+      <a class="ig-item" href="https://www.instagram.com/hairbyneelamsagar" target="_blank" rel="noopener" aria-label="View on Instagram: long braid outdoors">
+        <img src="https://images.pexels.com/photos/28833615/pexels-photo-28833615.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=600&h=600" alt="Long elegant braid in natural light" loading="lazy">
+        <span class="ig-ov"><i data-lucide="instagram"></i></span>
+      </a>
+      <a class="ig-item" href="https://www.instagram.com/hairbyneelamsagar" target="_blank" rel="noopener" aria-label="View on Instagram: pearl bun styling">
+        <img src="https://images.pexels.com/photos/20593206/pexels-photo-20593206.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=600&h=600" alt="Stylist finishing a bun with pearl accessory" loading="lazy">
+        <span class="ig-ov"><i data-lucide="instagram"></i></span>
+      </a>
+      <a class="ig-item" href="https://www.instagram.com/hairbyneelamsagar" target="_blank" rel="noopener" aria-label="View on Instagram: bridal veil moment">
+        <img src="https://images.pexels.com/photos/31562262/pexels-photo-31562262.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=600&h=600" alt="Bride with veil outdoors, elegant hairstyle" loading="lazy">
+        <span class="ig-ov"><i data-lucide="instagram"></i></span>
+      </a>
+      <a class="ig-item" href="https://www.instagram.com/hairbyneelamsagar" target="_blank" rel="noopener" aria-label="View on Instagram: black and white bridal study">
+        <img src="https://images.pexels.com/photos/34160540/pexels-photo-34160540.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=600&h=600" alt="Black and white bridal hair study in lace" loading="lazy">
+        <span class="ig-ov"><i data-lucide="instagram"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT / BOOKING ================= -->
+<section class="section services" id="contact" style="border-top:1px solid var(--line-t)">
+  <div class="container">
+    <div class="section-head" style="max-width:700px">
+      <p class="label rv">06 · Bookings</p>
+      <h2 class="h-display rv" style="--rd:.08s">Let's plan your <em>hair.</em></h2>
+      <p class="lead rv" style="--rd:.14s; margin-top:1.2rem;">Share a few details and Neelam will respond personally — usually within 24 hours. For anything urgent, WhatsApp is fastest.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div>
+        <a class="direct-card rv" style="--rd:.1s" href="https://wa.me/919582550707?text=Hi%20Neelam%2C%20I%27d%20like%20to%20enquire%20about%20a%20hair%20booking." target="_blank" rel="noopener">
+          <span class="direct-ic"><i data-lucide="message-circle"></i></span>
+          <div><b>WhatsApp — fastest reply</b><span>+91 95825 50707</span></div>
+        </a>
+        <a class="direct-card rv" style="--rd:.18s" href="https://www.instagram.com/hairbyneelamsagar" target="_blank" rel="noopener">
+          <span class="direct-ic"><i data-lucide="instagram"></i></span>
+          <div><b>Instagram</b><span>@hairbyneelamsagar</span></div>
+        </a>
+        <p class="direct-note rv" style="--rd:.26s"><i data-lucide="plane"></i> Based in Delhi — booking worldwide for weddings, editorials and events. Travel &amp; stay arranged with the brief.</p>
+      </div>
+
+      <div class="form-card rv" style="--rd:.2s">
+        <h3 class="form-title">Request a <em>booking</em></h3>
+        <p class="form-sub">Fields marked <span style="color:var(--gold-ink)">*</span> are required.</p>
+
+        <form id="bookForm" novalidate>
+          <div class="f-grid">
+            <div class="field">
+              <label for="fName">Name <i>*</i></label>
+              <input id="fName" name="name" type="text" placeholder="Your full name" autocomplete="name">
+              <span class="f-err">Please enter your name.</span>
+            </div>
+            <div class="field">
+              <label for="fPhone">Phone / WhatsApp <i>*</i></label>
+              <input id="fPhone" name="phone" type="tel" placeholder="+91 ·····" autocomplete="tel">
+              <span class="f-err">Please enter a valid phone number.</span>
+            </div>
+            <div class="field">
+              <label for="fEmail">Email</label>
+              <input id="fEmail" name="email" type="email" placeholder="you@email.com" autocomplete="email">
+              <span class="f-err">That email doesn't look right.</span>
+            </div>
+            <div class="field">
+              <label for="fDate">Event Date</label>
+              <input id="fDate" name="date" type="date">
+              <span class="f-err">Please choose a future date.</span>
+            </div>
+            <div class="field f-full">
+              <label for="fLoc">Location</label>
+              <input id="fLoc" name="location" type="text" placeholder="City / venue — anywhere in the world">
+            </div>
+            <div class="field f-full">
+              <label for="fMsg">Message <i>*</i></label>
+              <textarea id="fMsg" name="message" placeholder="Tell me about the occasion — bridal, editorial or event, and anything you have in mind."></textarea>
+              <span class="f-err">A few words will help — please add a short message.</span>
+            </div>
+          </div>
+
+          <div class="form-foot">
+            <button class="btn btn-gold" type="submit">Request Booking <i data-lucide="send"></i></button>
+            <span class="form-hint">No payment now — this simply starts the conversation.</span>
+          </div>
+        </form>
+
+        <div class="form-success" id="formSuccess" role="status">
+          <span class="ok"><i data-lucide="check"></i></span>
+          <h3>Thank <em>you.</em></h3>
+          <p>Your request has been received. Neelam will reply personally within 24 hours — for anything urgent, message on WhatsApp at +91 95825 50707.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <a class="f-brand" href="#home">
+      <span class="mono" aria-hidden="true">NS</span>
+      <span><span class="n">Hair by Neelam Sagar</span><span class="s">Delhi · Available Worldwide</span></span>
+    </a>
+    <div class="f-soc">
+      <a href="https://www.instagram.com/hairbyneelamsagar" target="_blank" rel="noopener" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+      <a href="https://wa.me/919582550707" target="_blank" rel="noopener" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+    </div>
+    <div class="f-rule"></div>
+    <small>© <span id="yr">2026</span> Hair by Neelam Sagar. All rights reserved.</small>
+    <small class="top"><a class="totop" href="#home">Back to top <i data-lucide="arrow-up"></i></a></small>
+  </div>
+</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image viewer" aria-hidden="true">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close viewer"><i data-lucide="x"></i></button>
+  <div class="lb-stage">
+    <img class="lb-img" id="lbImg" src="" alt="">
+    <div class="lb-meta">
+      <span class="cap" id="lbCap"></span>
+      <span class="cnt" id="lbCnt"></span>
+    </div>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous image"><i data-lucide="chevron-left"></i></button>
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Next image"><i data-lucide="chevron-right"></i></button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- icons ---------- */
+  lucide.createIcons();
+
+  /* ---------- entrance ---------- */
+  var booted = false;
+  function boot(){ if(booted) return; booted = true; document.body.classList.add("loaded"); }
+  window.addEventListener("load", function(){ setTimeout(boot, 150); });
+  setTimeout(boot, 1800);
+
+  /* ---------- nav background on scroll ---------- */
+  var nav = document.getElementById("siteNav");
+  function onScroll(){ nav.classList.toggle("scrolled", window.scrollY > 50); }
+  window.addEventListener("scroll", onScroll, { passive:true });
+  onScroll();
+
+  /* ---------- mobile menu ---------- */
+  var burger = document.getElementById("burger");
+  var mMenu  = document.getElementById("mMenu");
+  var lastFocus = null;
+  function openMenu(){
+    lastFocus = document.activeElement;
+    document.body.classList.add("menu-open","no-scroll");
+    mMenu.classList.add("open");
+    mMenu.setAttribute("aria-hidden","false");
+    burger.setAttribute("aria-expanded","true");
+    burger.setAttribute("aria-label","Close menu");
+  }
+  function closeMenu(){
+    document.body.classList.remove("menu-open","no-scroll");
+    mMenu.classList.remove("open");
+    mMenu.setAttribute("aria-hidden","true");
+    burger.setAttribute("aria-expanded","false");
+    burger.setAttribute("aria-label","Open menu");
+    if(lastFocus) lastFocus.focus();
+  }
+  burger.addEventListener("click", function(){
+    mMenu.classList.contains("open") ? closeMenu() : openMenu();
+  });
+  mMenu.querySelectorAll("a.m-link").forEach(function(a){
+    a.addEventListener("click", closeMenu);
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && mMenu.classList.contains("open")) closeMenu();
+  });
+
+  /* ---------- fade-in on scroll ---------- */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+    });
+  }, { threshold:.13, rootMargin:"0px 0px -40px 0px" });
+  document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
+
+  var map = {};
+document.querySelectorAll('.nav-links a.nav-a[href^="#"]').forEach(function(a){
+  map[a.getAttribute("href").slice(1)] = a;
+});
+var spy = new IntersectionObserver(function(entries){
+  entries.forEach(function(en){
+    if(en.isIntersecting && map[en.target.id]){
+      Object.keys(map).forEach(function(k){ map[k].classList.remove("active"); });
+      map[en.target.id].classList.add("active");
+    }
+  });
+}, { rootMargin:"-42% 0px -52% 0px" });
+Object.keys(map).forEach(function(id){
+  var s = document.getElementById(id); if(s) spy.observe(s);
+});
+  /* ---------- lightbox ---------- */
+  var items = [].slice.call(document.querySelectorAll(".g-item"));
+  var lb      = document.getElementById("lightbox");
+  var lbImg   = document.getElementById("lbImg");
+  var lbCap   = document.getElementById("lbCap");
+  var lbCnt   = document.getElementById("lbCnt");
+  var lbClose = document.getElementById("lbClose");
+  var lbPrev  = document.getElementById("lbPrev");
+  var lbNext  = document.getElementById("lbNext");
+  var idx = 0, lbReturn = null;
+
+  function showLb(i){
+    idx = (i + items.length) % items.length;
+    var it = items[idx];
+    var im = it.querySelector("img");
+    lbImg.src = it.getAttribute("data-full");
+    lbImg.alt = im ? im.alt : "";
+    lbCap.textContent = it.getAttribute("data-cap") || "";
+    lbCnt.textContent = (idx + 1) + " / " + items.length;
+  }
+  function openLb(i){
+    lbReturn = document.activeElement;
+    showLb(i);
+    lb.classList.add("open");
+    lb.setAttribute("aria-hidden","false");
+    document.body.classList.add("no-scroll");
+    lbClose.focus();
+  }
+  function closeLb(){
+    lb.classList.remove("open");
+    lb.setAttribute("aria-hidden","true");
+    document.body.classList.remove("no-scroll");
+    if(lbReturn) lbReturn.focus();
+  }
+  items.forEach(function(it, i){ it.addEventListener("click", function(){ openLb(i); }); });
+  lbClose.addEventListener("click", closeLb);
+  lbPrev.addEventListener("click", function(){ showLb(idx - 1); });
+  lbNext.addEventListener("click", function(){ showLb(idx + 1); });
+  lb.addEventListener("click", function(e){ if(e.target === lb) closeLb(); });
+  document.addEventListener("keydown", function(e){
+    if(!lb.classList.contains("open")) return;
+    if(e.key === "Escape") closeLb();
+    if(e.key === "ArrowLeft") showLb(idx - 1);
+    if(e.key === "ArrowRight") showLb(idx + 1);
+  });
+
+  /* ---------- testimonial slider (auto + manual + swipe) ---------- */
+  var track = document.getElementById("tTrack");
+  var slides = [].slice.call(track.children);
+  var dotsWrap = document.getElementById("tDots");
+  var tIdx = 0, timer = null;
+
+  slides.forEach(function(_, i){
+    var b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("aria-label", "Show testimonial " + (i + 1));
+    b.innerHTML = "<i></i>";
+    b.addEventListener("click", function(){ go(i, true); });
+    dotsWrap.appendChild(b);
+  });
+  var dots = [].slice.call(dotsWrap.children);
+
+  function go(i, manual){
+    tIdx = (i + slides.length) % slides.length;
+    track.style.transform = "translateX(-" + (tIdx * 100) + "%)";
+    dots.forEach(function(d, di){ d.classList.toggle("on", di === tIdx); });
+    if(manual) restart();
+    lucide.createIcons();
+  }
+  function restart(){ clearInterval(timer); timer = setInterval(function(){ go(tIdx + 1); }, 6500); }
+  document.getElementById("tPrev").addEventListener("click", function(){ go(tIdx - 1, true); });
+  document.getElementById("tNext").addEventListener("click", function(){ go(tIdx + 1, true); });
+
+  var shell = track.closest(".t-shell");
+  shell.addEventListener("mouseenter", function(){ clearInterval(timer); });
+  shell.addEventListener("mouseleave", restart);
+  shell.addEventListener("focusin", function(){ clearInterval(timer); });
+  shell.addEventListener("focusout", restart);
+
+  var x0 = null;
+  track.addEventListener("touchstart", function(e){ x0 = e.touches[0].clientX; }, { passive:true });
+  track.addEventListener("touchend", function(e){
+    if(x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if(Math.abs(dx) > 42) go(dx < 0 ? tIdx + 1 : tIdx - 1, true);
+    x0 = null;
+  }, { passive:true });
+
+  go(0); restart();
+
+  /* ---------- min date = today ---------- */
+  var fDate = document.getElementById("fDate");
+  fDate.min = new Date().toISOString().split("T")[0];
+
+  /* ---------- form validation ---------- */
+  var form = document.getElementById("bookForm");
+
+  function setErr(id, on){
+    var f = document.getElementById(id).closest(".field");
+    f.classList.toggle("error", on);
+    return !on;
+  }
+  function val(id){ return document.getElementById(id).value.trim(); }
+
+  document.querySelectorAll("#bookForm input, #bookForm textarea").forEach(function(el){
+    el.addEventListener("input", function(){ el.closest(".field").classList.remove("error"); });
+  });
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var ok = true;
+
+    /* name */
+    ok = setErr("fName", val("fName").length < 2) && ok;
+
+    /* phone — allow +, spaces, dashes; require 8+ digits */
+    var digits = val("fPhone").replace(/\D/g, "").length;
+    ok = setErr("fPhone", digits < 8) && ok;
+
+    /* email — optional, validate if filled */
+    var em = val("fEmail");
+    ok = setErr("fEmail", em !== "" && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)) && ok;
+
+    /* date — optional, must be today or later if set */
+    var d = val("fDate");
+    var badDate = d !== "" && new Date(d + "T00:00:00") < new Date(new Date().toDateString());
+    ok = setErr("fDate", badDate) && ok;
+
+    /* message */
+    ok = setErr("fMsg", val("fMsg").length < 5) && ok;
+
+    if(!ok){
+      var firstErr = form.querySelector(".field.error input, .field.error textarea");
+      if(firstErr) firstErr.focus();
+      return;
+    }
+
+    form.style.display = "none";
+    document.getElementById("formSuccess").classList.add("show");
+    lucide.createIcons();
+  });
+/* ---------- reels: play when visible, tap button to unmute ---------- */
+var reels = [].slice.call(document.querySelectorAll(".reel"));
+var reelIO = new IntersectionObserver(function(entries){
+  entries.forEach(function(en){
+    var v = en.target.querySelector("video");
+    if(en.isIntersecting){ v.play().catch(function(){}); }
+    else { v.pause(); }
+  });
+}, { threshold:.6 });
+
+reels.forEach(function(r){
+  var v = r.querySelector("video");
+  var b = r.querySelector(".reel-btn");
+  reelIO.observe(r);
+  b.addEventListener("click", function(){
+    var willUnmute = v.muted;
+    reels.forEach(function(o){ o.querySelector("video").muted = true; o.querySelector(".reel-btn").innerHTML = '<i data-lucide="volume-x"></i>'; });
+    v.muted = !willUnmute;
+    b.innerHTML = '<i data-lucide="' + (willUnmute ? "volume-2" : "volume-x") + '"></i>';
+    b.setAttribute("aria-label", willUnmute ? "Mute video" : "Unmute video");
+    lucide.createIcons();
+  });
+});
+  /* ---------- footer year ---------- */
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script><script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+</body>
+</html>
